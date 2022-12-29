@@ -23,12 +23,11 @@ jobs:
         uses: actions/setup-node@v3.5.1
         
       - name: GitHub Script
-        uses: actions/github-script@v6.3.3
-        id: getdata
+        uses: actions/setup-node@v3.5.1
         with:
           script: |
                    
-                  
+                   
                    let query = "mutation { create_item (board_id: 3688894632, group_id: \"topics\", item_name: \"new item\") { id }}";
 
                     fetch ("https://api.monday.com/v2", {
