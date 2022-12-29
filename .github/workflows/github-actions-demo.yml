@@ -28,7 +28,7 @@ jobs:
           script: |
                    
                    
-                   const axios = require('axios')
+                 
                    const fetch = (url) => import('node-fetch').then(({default: fetch}) => fetch(url));
 
                    
