@@ -18,5 +18,9 @@ jobs:
                  
       - name: Execute JavaScript inline
         uses: satackey/action-js-inline@v0.0.2
-         script:| 
-                 console.log("hello_world");
+        with:
+        # Edit the following line to install packages required to run your script.
+          required-packages: axios
+          script: |
+                    console.log("hello_world");
+        
