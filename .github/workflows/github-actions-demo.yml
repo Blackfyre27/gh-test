@@ -16,9 +16,8 @@ jobs:
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
                  
-      - name: Testing the waters around NODE JS /JSONLOOP
-        # To use latest action, specify "release-master" instead of "v0.0.2"
-        uses: satackey/action-js-inline@v0.0.2
+      - name: GitHub Script
+        uses: actions/github-script@v6.3.3
         id: getdata
         with:
           # Edit the following line to install packages required to run your script.
