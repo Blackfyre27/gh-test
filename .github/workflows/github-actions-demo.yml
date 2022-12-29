@@ -7,7 +7,7 @@ jobs:
     env:
          GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Get all issues from the repository : GH-TEST
+      - name: Get all issues from the repository -  GH-TEST
         run: |
                # GitHub CLI api
                # https://cli.github.com/manual/gh_api
