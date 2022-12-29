@@ -16,12 +16,6 @@ jobs:
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
       
-      - name: Install NodeFetch
-        run: npm install node-fetch
-      
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.1
-        
       - name: GitHub Script
         uses: actions/github-script@v6
         with:
