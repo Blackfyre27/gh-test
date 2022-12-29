@@ -16,4 +16,11 @@ jobs:
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
                  
-    
+      - name: Output current branch name & date
+        # To use latest action, specify "release-master" instead of "v0.0.2"
+        uses: satackey/action-js-inline@v0.0.2
+        script: |
+            const core = require('@actions/core')
+            const axios = require('axios')
+
+
