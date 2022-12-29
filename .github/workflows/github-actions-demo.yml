@@ -24,7 +24,7 @@ jobs:
           # Edit the following line to install packages required to run your script.
           required-packages: axios
           script: |
-                  
+                   console.log("effect");
                      
 
 
