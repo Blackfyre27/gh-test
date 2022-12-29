@@ -18,7 +18,10 @@ jobs:
       
       - name: Install NodeFetch
         run: npm install node-fetch
-
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+        
       - name: GitHub Script
         uses: actions/github-script@v6.3.3
         id: getdata
