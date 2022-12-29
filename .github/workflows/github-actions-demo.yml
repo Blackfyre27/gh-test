@@ -7,7 +7,7 @@ jobs:
     env:
          GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Install dependencies
+      - name: Get all issues from the repository : GH-TEST
         run: |
                # GitHub CLI api
                # https://cli.github.com/manual/gh_api
@@ -16,7 +16,7 @@ jobs:
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
                  
-      - name: Output current branch name & date
+      - name: Testing the waters around NODE JS
         # To use latest action, specify "release-master" instead of "v0.0.2"
         uses: satackey/action-js-inline@v0.0.2
         id: getdata
