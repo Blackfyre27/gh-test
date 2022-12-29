@@ -27,7 +27,7 @@ jobs:
         with:
           script: |
                    
-                   const core = require('@actions/core')
+                   
                    const axios = require('axios')
                    const fetch = (url) => import('node-fetch').then(({default: fetch}) => fetch(url));
 
