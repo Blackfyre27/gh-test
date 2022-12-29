@@ -29,7 +29,7 @@ jobs:
                    
                    
                  
-                   const fetch = (url) => import('node-fetch').then(({default: fetch}) => fetch(url));
+                   const fetch = require("node-fetch");
 
                    
                    let query = "mutation { create_item (board_id: 3688894632, group_id: \"topics\", item_name: \"new item\") { id }}";
