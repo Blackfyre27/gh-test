@@ -7,12 +7,13 @@ jobs:
     env:
          GH_TOKEN: ${{ github.token }}
     steps:
-      - run: |
+      - name: Install dependencies
+        run: |
                # GitHub CLI api
                # https://cli.github.com/manual/gh_api
-               gh api \
-               -H "Accept: application/vnd.github+json" \
-               /repos/Blackfyre27/gh-test/issues  --template \
-               '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
+                 gh api \
+                 -H "Accept: application/vnd.github+json" \
+                 /repos/Blackfyre27/gh-test/issues  --template \
+                 '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
                  
     
