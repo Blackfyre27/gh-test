@@ -16,5 +16,5 @@ jobs:
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
       
-      - name: GitHub Script
-        run: node monday.js
+      - name: CLI install
+      - run: npm install
