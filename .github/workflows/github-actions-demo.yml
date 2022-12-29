@@ -14,6 +14,6 @@ jobs:
                   -H "Accept: application/vnd.github+json" \
                   /repos/Blackfyre27/gh-test/issues  --template \
                   '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
-                  
+                  > test.json
         
         
