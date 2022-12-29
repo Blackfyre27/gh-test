@@ -16,4 +16,4 @@ jobs:
                   /repos/Blackfyre27/gh-test/issues  --template \
                   '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: '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'
