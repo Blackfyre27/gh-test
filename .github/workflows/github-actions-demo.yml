@@ -20,8 +20,6 @@ jobs:
         uses: actions/github-script@v6.3.3
         id: getdata
         with:
-          # Edit the following line to install packages required to run your script.
-          required-packages: axios
           script: |
                    let query = "mutation { create_item (board_id: 3688894632, group_id: \"topics\", item_name: \"new item\") { id }}";
 
