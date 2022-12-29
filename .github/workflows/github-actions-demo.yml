@@ -23,9 +23,8 @@ jobs:
         uses: actions/setup-node@v3.5.1
         
       - name: GitHub Script
-        uses: satackey/action-js-inline@v0.0.2
+        uses: actions/github-script@v6
         with:
-          required-packages: axios
           script: |
                    
                    const core = require('@actions/core')
