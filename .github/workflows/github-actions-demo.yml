@@ -5,7 +5,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     
-    
+    name: Getting all issues from the repository
+    env:
+         GH_TOKEN: ${{ github.token }}
     steps:
       - run: |
                # GitHub CLI api
@@ -15,5 +17,4 @@ jobs:
                   -H "Accept: application/vnd.github+json" \
                   /repos/Blackfyre27/gh-test/issues  --template \
                   '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
-        env:
-         GH_TOKEN: ${{ github.token }}
+        
