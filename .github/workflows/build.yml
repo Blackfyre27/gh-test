@@ -4,7 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     container: node:18
     steps:
-      - run: gh auth login
       - run: node --version
       - run: npm -- version
       - uses: actions/checkout@v3
