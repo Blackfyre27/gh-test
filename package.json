@@ -1,0 +1,25 @@
+{
+  "name": "gh-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blackfyre27/gh-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blackfyre27/gh-test/issues"
+  },
+  "homepage": "https://github.com/Blackfyre27/gh-test#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.0"
+  },
+"scripts": {
+  "build": "ncc build src/action.js -o dist"
+}
+}
