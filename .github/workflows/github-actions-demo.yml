@@ -19,8 +19,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
             node-version: 18
-      - run: npm ci
-      - run: npm test
       - name: Running monday script
         shell: bash
         run: /home/runner/work/gh-test/gh-test
