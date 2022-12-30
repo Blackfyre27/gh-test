@@ -4,7 +4,6 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container: node:18
     env:
          GH_TOKEN: ${{ github.token }}
     steps:
@@ -20,11 +19,13 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        with: 
+            node-version: 16
       - run: npm install
   
       - name: Running monday script
         shell: bash
-        run: /home/runner/work/gh-test/gh-test
+        run: /home/runner/work/gh-test/gh-test/monday.js
         
       - name: GitHub Script
         uses: satackey/action-js-inline@v0.0.2
