@@ -19,8 +19,11 @@ jobs:
       - name: Install NodeFetch
         run: npm install node-fetch
       
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.1
+      - name: NVM USE
+        run: nvm use
+      
+      - name: NPM Install
+        run: npm install
         
       - name: GitHub Script
         uses: satackey/action-js-inline@v0.0.2
