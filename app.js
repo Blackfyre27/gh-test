@@ -1,4 +1,4 @@
-let query = "mutation {create_item (item_name:jec!, board_id:3688894632) {id}}"
+let query = "mutation {create_item (item_name:"+"dcfvgbhnjm"+", board_id:3688894632) {id}}"
 //mutation {create_item (item_name:"jec!", board_id:3688894632,column_values: "{\"text\" :\"google.com\",\"text9\":\"cascade\"}") {id}}
 
 fetch ("https://api.monday.com/v2", {
