@@ -4,10 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     container: node:18
     steps:
-      - run: node --version
-      - run: npm -- version
-      - uses: actions/checkout@v3
-      - run: npm install
       - run: |
                 # GitHub CLI api
                 # https://cli.github.com/manual/gh_api
@@ -16,5 +12,8 @@ jobs:
                   /repos/Blackfyre27/gh-test/issues  --template \
                   '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
 
-
+      - run: node --version
+      - run: npm -- version
+      - uses: actions/checkout@v3
+      - run: npm install
       - run: node app.js
