@@ -19,6 +19,9 @@ jobs:
       - name: pwd
         run: pwd
         
+      - name: Run monday.js
+        run: bash monday.js
+        
       - name: GitHub Script
         uses: satackey/action-js-inline@v0.0.2
         with:
