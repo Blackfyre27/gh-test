@@ -4,6 +4,7 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    container: node:18
     env:
          GH_TOKEN: ${{ github.token }}
     steps:
@@ -15,10 +16,12 @@ jobs:
                  -H "Accept: application/vnd.github+json" \
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
+      - run: node --version
+      - run: npm --version
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with:
-            node-version: 18
+      - run: npm install
+  
       - name: Running monday script
         shell: bash
         run: /home/runner/work/gh-test/gh-test
