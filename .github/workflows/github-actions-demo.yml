@@ -20,7 +20,7 @@ jobs:
         run: npm install node-fetch
       
       - name: NVM USE
-        run: nvm use
+        run: nvm use 8.10.0
       
       - name: NPM Install
         run: npm install
