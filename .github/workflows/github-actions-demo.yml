@@ -17,7 +17,8 @@ jobs:
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
          
       - name: Running monday script
-        run: bash gh-test/monday.js 
+        shell: bash
+        run: gh-test/monday.js 
         
       - name: GitHub Script
         uses: satackey/action-js-inline@v0.0.2
