@@ -1,4 +1,4 @@
-let query = "mutation { create_item (board_id: 3688894632, group_id: \"topics\", item_name: \"new item\") { id }}";
+let query = "mutation {create_item (item_name:"jec!", board_id:3688894632,column_values: "{\"text\" :\"google.com\",\"text9\":\"cascadeo\"}") {id}}";
 
 fetch ("https://api.monday.com/v2", {
   method: 'post',
@@ -12,3 +12,5 @@ fetch ("https://api.monday.com/v2", {
   })
    .then(res => res.json())
    .then(res => console.log(JSON.stringify(res, null, 2)));
+
+
