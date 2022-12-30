@@ -15,15 +15,9 @@ jobs:
                  -H "Accept: application/vnd.github+json" \
                  /repos/Blackfyre27/gh-test/issues  --template \
                  '{{range .}}{{.id}}: [{{"\n"}}{Number: {{.number}},{{"\n"}}Title: ''"{{.title}}"'', {{"\n"}}Labels: ''{{.labels | pluck "name"}}'',{{"\n"}}Assignee:''"{{.assignee.login}}"'',{{"\n"}}State:''"{{.state}}"'',{{"\n"}}URL:''"{{.html_url}}"''}],{{"\n"}}{{end}}''}'
-      
-      - name: Install NodeFetch
-        run: npm install node-fetch
-      
-      - name: NVM USE
-        run: nvm use 8.10.0
-      
-      - name: NPM Install
-        run: npm install
+         
+      - name: Running monday script
+        run: bash monday.js
         
       - name: GitHub Script
         uses: satackey/action-js-inline@v0.0.2
