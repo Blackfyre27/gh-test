@@ -4,10 +4,11 @@ const url = [];
 async function getDataFromSampleRepository() {
 
   const { Octokit } = require("@octokit/rest");
-  const loadGhToken = require('load-gh-token');
+  const GITHUB_TOKEN = core.getInput('GITHUB-TOKEN');
 
+  
   const octokit = new Octokit({
-    auth: loadGhToken //change this to your gh token
+    auth: GITHUB_TOKEN //change this to your gh token
   })
 
   const result = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels}', {
