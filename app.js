@@ -7,7 +7,7 @@ async function getDataFromSampleRepository() {
   const { createTokenAuth } = require("@octokit/auth-token");
 
   
-  const auth = createTokenAuth("awesfawfawfawgtqwagqghqwrdsfadgee");
+  const auth = createTokenAuth("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");
   const authentication = await auth();
   
   const octokit = new Octokit({
