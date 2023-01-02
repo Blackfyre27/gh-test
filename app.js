@@ -4,8 +4,10 @@ const url = [];
 async function getDataFromSampleRepository() {
 
   const { Octokit } = require("@octokit/rest");
+  const { createTokenAuth } = require("@octokit/auth-token");
+
   
-  const auth = createTokenAuth("ghp_PersonalAccessToken01245678900000000");
+  const auth = createTokenAuth("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");
   const authentication = await auth();
   
   const octokit = new Octokit({
