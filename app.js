@@ -4,9 +4,10 @@ const url = [];
 async function getDataFromSampleRepository() {
 
   const { Octokit } = require("@octokit/rest");
+  const loadGhToken = require('load-gh-token');
 
   const octokit = new Octokit({
-    auth: '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' //change this to your gh token
+    auth: loadGhToken; //change this to your gh token
   })
 
   const result = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels}', {
