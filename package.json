@@ -1,4 +1,7 @@
 {
     "name": "simple",
-    "main": "app.json"
+    "main": "app.json",
+    "dependencies": {
+        "@octokit/rest": "^19.0.5"
+    }
 }
