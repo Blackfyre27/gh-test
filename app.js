@@ -11,7 +11,7 @@ async function getDataFromSampleRepository() {
   const authentication = await auth();
   
   const octokit = new Octokit({
-    auth: auth //change this to your gh token
+    auth: "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" //change this to your gh token
     
   })
 
