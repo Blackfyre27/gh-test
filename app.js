@@ -6,7 +6,7 @@ async function getDataFromSampleRepository() {
   const { Octokit } = require("@octokit/rest");
 
   const octokit = new Octokit({
-    auth: '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' //change this to your gh token
+    auth: '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' //change this to your gh token
   })
 
   const result = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels}', {
