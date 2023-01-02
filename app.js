@@ -9,9 +9,18 @@ async function getDataFromSampleRepository() {
   
   const auth = createTokenAuth("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");
   const authentication = await auth();
+  {
+     type: 'token',
+     token: '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',
+     tokenType: 'oauth',
+     headers: {
+       authorization: 'token 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'
+     }
+  }
   
   const octokit = new Octokit({
     auth: authentication //change this to your gh token
+    
   })
 
   const result = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels}', {
