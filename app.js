@@ -17,8 +17,8 @@ async function getDataFromSampleRepository() {
 
   // This function allows us to get all the issues from the current repository
   const result = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels}', {
-    owner: 'Blackfyre27',
-    repo: 'gh-test'
+    owner: 'Blackfyre27', //change the owner
+    repo: 'gh-test' //change the repository name
   })
 
   //console.log(result.data);
