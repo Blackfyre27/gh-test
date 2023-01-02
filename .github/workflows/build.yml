@@ -7,6 +7,7 @@ jobs:
       - run: node --version
       - run: npm -- version
       - uses: actions/checkout@v3
+      - run: npm install load-gh-token
       - run: npm install @octokit/rest
       - run: npm install
       - run: node app.js
